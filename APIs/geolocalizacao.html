@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalização</title>
+</head>
+<body>
+    <h2>JavaScript Geolocation API</h2>
+    <p>Clique no botão para pegar suas coodernadas.</p>
+    <button onclick="getLocation()">Tente</button>
+    <p id="demo"></p>
+    <div id="mapholder"></div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11585.664726573206!2d-38.79387216619419!3d-4.113232325607001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7b417b8b6e942095!2sLe%20Gourmet!5e0!3m2!1spt-BR!2sbr!4v1644145402652!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <script>
+        const x = document.getElementById("demo");
+        /* Acessando a localização*/
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        /*function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+        }
+        /* Exibindo o resultado em mapa */
+        function showPosition(position) {
+            let latlon = position.coords.latitude + "," + position.coords.longitude;
+            let img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+            document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+        }
+        </script>
+</body>
+</html>
