@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+<h2>Solicitar JSON usando a tag de script</h2>
+<p>O arquivo PHP retorna uma chamada para uma função que manipulará os dados JSON.</p>
+<p id="demo"></p>
+<script src="testeConexoes\servidor.php"></script>
+<script>
+    function myFunc(myObj) {
+      document.getElementById("demo").innerHTML = myObj.name;
+    }
+</script>
+</body>
+</html>
