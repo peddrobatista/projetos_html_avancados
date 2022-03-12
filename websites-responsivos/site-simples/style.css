@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth; /* Para rolar a pagina quando clicar no link*/
+    scroll-behavior: smooth; /* Para rolar a pagina devagar */
     font-family: 'Roboto', sans-serif;
 }
 /* Configuraçóes do menu */
@@ -86,6 +86,10 @@ section:nth-child(odd) {
         justify-content: center;
         align-items: center;
         display: flex;
+    }
+    /* Configurações do menu */
+    header {
+        padding: 0 40px;
     }
     header ul {
         position: absolute;
