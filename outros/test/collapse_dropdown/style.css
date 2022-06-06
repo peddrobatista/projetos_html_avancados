@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2? family= Poppins:wght@300;400;500;600;700;800;900 & family= Press+Start+2P & family= Roboto & display=swap');
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    border: 1px solid #34ace0;
+}
+[class*="collapsible-"] {
+    position: absolute;
+    overflow: hidden;
+    font-weight: 500;
+    border: 1px solid green;
+}
+[class*="collapsible-"] input {
+    display: none;
+}
+[class*="collapsible-"] label {
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    background: #fff;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.1), 0 4px 11px 0 rgba(0,0,0,.08);
+    color: #34ace0;
+    display: block;
+    width: 150px;
+    margin: 10px 10px 10px;
+    cursor: pointer;
+    padding: 15px 0;
+    border-radius: 4px;
+    z-index: 1;
+}
+[class*="collapsible-"] label::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    background: url(chevron-forward-outline.svg) no-repeat 0 0;
+    transition: all 0.3s ease;
+}
+.collapsible-1 #btn1 {
+    left: 20%;
+}
+.collapsible-2 #btn2 {
+    left: 40%;
+}
+.collapsible-3 #btn3 {
+    left: 60%;
+}
+[class*="collapsible-"] input:checked + label::after {
+    transform: rotate(90deg);
+}
+[class*="collapsible-text-"] {
+    max-height: 1px;
+    border: 1px solid red;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    position: relative;
+    top: -100%;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+[class*="collapsible-"] input:checked ~ [class*="collapsible-text-"] {
+    max-height: 300px;
+    padding-bottom: 25px;
+    background: #fff;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.1), 0 4px 11px 0 rgba(0,0,0,.08);
+    opacity: 1;
+    top: 0;
+}
+[class*="collapsible-text-"] h2 {
+    margin-bottom: 10px;
+    padding: 15px 15px 0;
+    color: #34ace0;
+}
+[class*="collapsible-text-"] p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
